@@ -24,16 +24,16 @@ src=$HOME
 date=`date "+%Y-%m-%dT%H-%M-%S"`
 
 #####################################
-No edits required below this line
+# No edits required below this line
 #####################################
 
 # If the requested image exists
-if [ -e $img ]
+if [ -e $img ]; then
 
 	# mount the image
-	hdid $img 
+	hdid $img > /dev/null
 	# if it mounted successfully
-	if [ $? -eq 0 ]
+	if [ $? -eq 0 ]; then
 		# setup the required directory structure and fail gracefully if it already exists
 		mkdir -p $destroot/Backups $destroot/Backups/current $destroot/Backups/back-$date 2>/dev/null
 
@@ -47,10 +47,8 @@ if [ -e $img ]
 		echo Backup completed... cleaning up.
 		
 		# what was the current backup no longer is because we just created a new one
-		# so delete the 'current' reference
-		if [ -e $destroot/Backups/current ]
-			rm -f $destroot/Backups/current
-		fi
+		# so delete the 'current' reference. soft fail
+		rm -f $destroot/Backups/current 2>/dev/null
 		# link the backup we just created to 'current'
 		ln -s back-$date $destroot/Backups/current
 		
