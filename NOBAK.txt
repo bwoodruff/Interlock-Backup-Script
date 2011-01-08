@@ -1,0 +1,4 @@
+.Trashes
+.Spotlight-V100
+Trash
+.fseventsd
