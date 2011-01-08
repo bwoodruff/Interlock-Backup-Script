@@ -10,10 +10,10 @@ Sources
 It is based on the work of Michael Jakl, and his original ideas can be found on his website: http://blog.interlinked.org/tutorials/rsync_time_machine.html
 
 WHAT DOES IT DO?
-Currently the script assumes that you have a hard drive (probably USB) that has an encrypted sparse bundle disk image on it (created through Disk Utility or similar). It creates incremental backups that will appear to contain the entire file structure that you are backing up, but uses very minimal space for files that haven't changed since the last backup. It does this using hardlinks to existing files. You can safely delete entire backup sets without losing your data because of that.
+Currently the script assumes that you have a hard drive (probably USB) that has an encrypted sparse bundle disk image on it (created through Disk Utility or similar). It creates incremental backups that will appear to contain the entire file structure that you are backing up, but uses very minimal space for files that haven't changed since the last backup. It does this using hard-links to existing files. You can safely delete entire backup sets without losing your data because of that.
 
 WHERE DOES IT WORK?
-So far I have only had the opportunity to test on Mac OS X 10.6 Snow Leopard. Ideally it will eventually work on anything loosly UNIX based that has rsync.
+So far I have only had the opportunity to test on Mac OS X 10.6 Snow Leopard. Ideally it will eventually work on anything loosely UNIX based that has rsync.
 
 WHAT DOESN'T IT DO?
 I have no plans to re-engineer rsync. If rsync can't do it, this script won't either. This is just a wrapper.
