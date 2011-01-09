@@ -58,6 +58,8 @@ if [ -e $img ]; then
 
 fi
 
+sleep 2
+
 # unmount the drive
 umount $rootvol
 

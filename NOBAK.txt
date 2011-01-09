@@ -2,3 +2,5 @@
 .Spotlight-V100
 Trash
 .fseventsd
+.Trash
+Documents/Virtual Machines.localized
