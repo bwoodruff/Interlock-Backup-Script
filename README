@@ -17,3 +17,8 @@ So far I have only had the opportunity to test on Mac OS X 10.6 Snow Leopard. Id
 
 WHAT DOESN'T IT DO?
 I have no plans to re-engineer rsync. If rsync can't do it, this script won't either. This is just a wrapper.
+
+HOW DO I USE IT?
+First open backup.sh in a text editor and change the variables at the top of the script. Then, from the command line, run:
+backup local (for a backup to a local hard drive)
+backup network (for a backup to an SSH server)
